@@ -144,6 +144,17 @@
     document.getElementById("github").addEventListener("click", function () {
         window.open("https://github.com/krunal013", "_blank");
     })
-</script>
+
+document.addEventListener("copy", (event) => {
+            const selectedData = window.getSelection().toString();
+            if (selectedData) {
+                // Add ✌️ emoji to the copied text
+                const modifiedData = `${selectedData} ✌️`;
+                event.clipboardData.setData("text/plain", modifiedData);
+                event.preventDefault(); // Prevent default copy behavior
+                
+            }
+        });
+    </script>
 
 </html>
